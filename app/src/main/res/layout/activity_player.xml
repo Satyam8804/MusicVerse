@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/linear_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:weightSum="10"
+    android:background="@drawable/background_img"
+    tools:context=".PlayerActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="8"
+        android:gravity="center"
+        android:orientation="vertical"
+        tools:ignore="Suspicious0dp,UselessParent">
+
+        <TextView
+            android:id="@+id/txtsn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:textAlignment="center"
+            android:ellipsize="marquee"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:marqueeRepeatLimit="marquee_forever"
+            android:maxLines="1"
+            android:scrollHorizontally="true"
+            android:textColor="@color/white"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:singleLine="true"
+            android:layout_marginBottom="20dp"
+            />
+
+
+
+        <FrameLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp">
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="300dp"
+                android:layout_height="300dp"
+                app:cardCornerRadius="150dp"
+                app:cardElevation="8dp"
+               android:background="@drawable/round_shape"
+                app:cardUseCompatPadding="false">
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/imageView"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/music"
+                    android:scaleType="centerCrop" />
+
+            </androidx.cardview.widget.CardView>
+
+
+        </FrameLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_marginTop="100dp">
+
+            <SeekBar
+                android:id="@+id/seekbar"
+
+                android:layout_width="230dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_centerInParent="true"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginBottom="20dp" />
+
+            <TextView
+                android:id="@+id/txtstart"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="false"
+                android:layout_centerInParent="true"
+                android:layout_marginLeft="20dp"
+                android:singleLine="true"
+                android:layout_toLeftOf="@id/seekbar"
+                android:text="0:10"
+                android:textColor="#fff"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/txtEnd"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@id/seekbar"
+                android:layout_marginRight="20dp"
+                android:singleLine="true"
+                android:layout_alignParentRight="false"
+                android:layout_centerInParent="true"
+                android:text="4:10"
+                android:textColor="#fff"
+                android:textSize="14sp" />
+        </RelativeLayout>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="2">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <Button
+                android:id="@+id/play_pause"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_centerHorizontal="true"
+
+                android:background="@drawable/pause" />
+
+            <Button
+                android:id="@+id/btn_next"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_toRightOf="@id/play_pause"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/skip_next" />
+
+            <Button
+                android:id="@+id/btn_prev"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_toLeftOf="@id/play_pause"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/skip_previous" />
+        </RelativeLayout>
+    </LinearLayout>
+</LinearLayout>
